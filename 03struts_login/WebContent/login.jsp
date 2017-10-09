@@ -5,7 +5,7 @@
 <head>
 </head>
 <body>
-	<form action="login.action" method="post">
+	<form action="user/login.action" method="post">
 		user:<input type="text" name="name" /> <br> 
 		pwd:<input type="password" name="pwd" /> <br> 
 		<input type="submit" value="submit" />

@@ -12,6 +12,11 @@ public class LoginAction {
 			return "failed";
 		}
 	}
+	
+	public String logout() {
+		System.out.println("success");
+		return "success";
+	}
 
 	public String getName() {
 		return name;

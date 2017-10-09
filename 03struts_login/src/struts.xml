@@ -2,12 +2,23 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
- 
- <struts>
- <package name="default" namespace="/" extends="struts-default">
- 	<action name="login" class="cn.sxt.action.LoginAction">
- 		<result name="success">/success.jsp</result>
- 		<result name="failed">/login.jsp</result>
- 	</action>
- </package>
- </struts>
+
+<struts>
+	<!-- 配置struts属性 -->
+	<!-- 乱码解决 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 自定义拓展名 -->
+	<constant name="struts.action.extension" value="action,test,," />
+	<!-- 设置开发者模式 开启：true 关闭：false 友好的提示消息 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 自动装载配置文件 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<!--2 在src下建立stuts.properties配置文件 -->
+
+	<!-- 团队协作开发 -->
+	<include file="config/sxt/struts/user.xml" />
+	
+	<!-- 配置文件加载顺序 struts-default.xml-struts-plugin.xml-struts.xml -->
+</struts>
+
