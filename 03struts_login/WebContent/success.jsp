@@ -5,6 +5,6 @@
 <head>
 </head>
 <body>
-This is my JSP page. <br>
+	user:${name }
 </body>
 </html>
