@@ -130,7 +130,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="common" prefix="localhost_access_log." resolveHosts="false" suffix=".txt"/>
         <!---->
 	
-      <Context docBase="03struts_login" path="/03struts_login" reloadable="true" source="org.eclipse.jst.jee.server:03struts_login"/></Host>
+      <Context docBase="04struts2_action" path="/04struts2_action" reloadable="true" source="org.eclipse.jst.jee.server:04struts2_action"/></Host>
     </Engine>
   </Service>
 </Server>
