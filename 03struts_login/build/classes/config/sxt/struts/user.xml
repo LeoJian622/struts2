@@ -7,7 +7,14 @@
 
 	<!-- 包的名称自定义，可以配置多个包；namespace命名空间：不同模块可以指定不同的空间 extends 值是直接获得或者间接继承struts-default -->
 	<package name="user" namespace="/user" extends="struts-default">
-	
+		<!-- 配置默认执行action 当所请求的action不存在时，那么执行默认action-->
+		<default-action-ref name="default"/>
+		<!-- 配置默认执行class -->
+		<default-class-ref class="cn.sxt.action.AddAction"/>
+		<global-results>
+		<!-- 配置全局结果集 -->
+			<result name="login">/login.jsp</result>
+		</global-results>
 		<!-- 
 			name是url请求名称，不需要加后缀(.action)
 			class是处理url请求对应的java类，class要求是包名+类名
@@ -48,8 +55,25 @@
 		<action name="logout" class="cn.sxt.action.LoginAction" method="logout">
 			<result name="success">/index.jsp</result>
 		</action>
-		<action name="add" class="cn.sxt.action.AddAction">
+		<action name="add" class="cn.sxt.action.AddAction" method="add">
 			<result>/index.jsp</result>
+		</action>
+		<action name="delete" class="cn.sxt.action.AddAction" method="add">
+			<result>/index.jsp</result>
+		</action>
+		<action name="update" class="cn.sxt.action.AddAction" method="add">
+			<result>/index.jsp</result>
+		</action>
+		
+		<!-- 使用通配符来配置action,可以减少action的配置，*表示匹配所有。占位符用{1}表示
+		第一个*所表示的内容
+			<action name="user*" class="cn.sxt.action.AddAction" method="{1}">
+			<result>/index.jsp</result>
+		</action>
+		 -->
+		
+		<action name="default">
+			<result>/error.jsp</result>
 		</action>
 	</package>
 
